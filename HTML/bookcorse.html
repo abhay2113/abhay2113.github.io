@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Booking | GlobalMove</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7f9;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .logo span {
+            color: #16bde5;
+        }
+
+        .header-info {
+            display: flex;
+            gap: 35px;
+            font-size: 14px;
+        }
+
+        .header-info strong {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .home-btn {
+            background: #25a9e0;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        /* NOTICE */
+        .notice {
+            background: #111;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .notice span {
+            color: #ff2929;
+            font-weight: bold;
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 1150px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .booking-box {
+            background: white;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 45px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.08);
+        }
+
+        /* LEFT */
+        .left h2,
+        .right h2 {
+            font-size: 19px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 35px;
+            margin-bottom: 25px;
+        }
+
+        .radio-group label {
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 20px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 0 12px;
+            font-size: 14px;
+            background: white;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #159bd3;
+        }
+
+        .add-cart {
+            margin-top: 25px;
+            background: #29a94b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add-cart:hover {
+            background: #218c3d;
+        }
+
+        /* RIGHT */
+        .right {
+            padding-left: 10px;
+        }
+
+        .right h2 {
+            margin-bottom: 20px;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        .terms input {
+            width: auto;
+            height: auto;
+        }
+
+        .terms a {
+            color: #777;
+        }
+
+        .pay-btn {
+            width: 100%;
+            height: 45px;
+            border: none;
+            background: #176ba6;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .pay-btn:hover {
+            background: #125783;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .success {
+            color: #249447;
+        }
+
+        .error {
+            color: #d62828;
+        }
+
+        /* MOBILE */
+        @media(max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .header-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .booking-box {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .right {
+                padding-left: 0;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            .booking-box {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        Global<span>Move</span>
+    </div>
+
+    <div class="header-info">
+
+        <div>
+            <strong>MAIL AT</strong>
+            support@globalmove.com
+        </div>
+
+        <div>
+            <strong>CALL US</strong>
+            +91 91517 45693
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="home-btn">
+        Home
+    </a>
+
+</header>
+
+
+<!-- NOTICE -->
+<div class="notice">
+    PLEASE MAKE SURE YOUR DETAILS
+    <span>ARE CORRECT BEFORE BOOKING</span>
+</div>
+
+
+<!-- MAIN -->
+<div class="container">
+
+    <h1>Book Course</h1>
+
+    <form id="bookingForm">
+
+        <div class="booking-box">
+
+            <!-- LEFT SIDE -->
+            <div class="left">
+
+                <h2>Course Booking</h2>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="bookingType"
+                            value="Course Booking"
+                            checked
+                        >
+                        Course Booking
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="bookingType"
+                            value="Exit Exam"
+                        >
+                        Exit Exam
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="bookingType"
+                            value="Request Certificate"
+                        >
+                        Request Certificate
+                    </label>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label>
+                            Type*
+                        </label>
+
+                        <select id="type" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Individual">
+                                Individual
+                            </option>
+
+                            <option value="valueAdded">
+                                Value Added
+                            </option>
+
+                            <option value="Company">
+                                Company
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Course*
+                        </label>
+
+                        <select id="course" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="TASCO" data-price="5500">
+                                TASCO
+                            </option>
+
+                            <option value="HV-(M)" data-price="6000">
+                                HV-(M)
+                            </option>
+
+                            <option value="OTCTO" data-price="4500">
+                                OTCTO
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label>
+                            Batch*
+                        </label>
+
+                        <select id="batch" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Morning">
+                                Morning
+                            </option>
+
+                            <option value="Afternoon">
+                                Afternoon
+                            </option>
+
+                            <option value="Evening">
+                                Evening
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Fee (INR)
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fee"
+                            readonly
+                            placeholder="Select course"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-cart"
+                    id="addCart"
+                >
+                    Add To Cart
+                </button>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="right">
+
+                <h2>Personal Details</h2>
+
+
+                <div class="field">
+
+                    <label>
+                        Candidate Name*
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="PLEASE ENTER A NAME"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        ID/Passport No*
+                    </label>
+
+                    <input
+                        type="text"
+                        id="idno"
+                        placeholder="ENTER ID/PASSPORT NO"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Date of Birth*
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dob"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Mobile No. (WhatsApp No.)*
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter mobile No."
+                        pattern="[0-9]{10}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Email Id*
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Please Enter Valid Email ID"
+                        required
+                    >
+
+                </div>
+
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    I Agree the
+                    <a href="#">
+                        Terms and Conditions
+                    </a>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="pay-btn"
+                >
+                    Book & Pay
+                </button>
+
+
+                <div id="message"></div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<script>
+
+const course =
+    document.getElementById("course");
+
+const fee =
+    document.getElementById("fee");
+
+
+/* COURSE PRICE */
+course.addEventListener("change", function () {
+
+    const selected =
+        course.options[course.selectedIndex];
+
+    const price =
+        selected.getAttribute("data-price");
+
+    if (price) {
+
+        fee.value =
+            "₹ " + price;
+
+    } else {
+
+        fee.value = "";
+
+    }
+
+});
+
+
+/* ADD TO CART */
+document
+    .getElementById("addCart")
+    .addEventListener("click", function () {
+
+        if (!course.value) {
+
+            alert("Please select a course.");
+
+            return;
+        }
+
+        alert(
+            course.value +
+            " added to cart."
+        );
+
+    });
+
+
+/* BOOKING */
+document
+    .getElementById("bookingForm")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const message =
+            document.getElementById("message");
+
+        const booking = {
+
+            bookingType:
+                document.querySelector(
+                    'input[name="bookingType"]:checked'
+                ).value,
+
+            type:
+                document.getElementById("type").value,
+
+            course:
+                course.value,
+
+            batch:
+                document.getElementById("batch").value,
+
+            fee:
+                fee.value,
+
+            name:
+                document.getElementById("name").value,
+
+            idno:
+                document.getElementById("idno").value,
+
+            dob:
+                document.getElementById("dob").value,
+
+            mobile:
+                document.getElementById("mobile").value,
+
+            email:
+                document.getElementById("email").value
+
+        };
+
+
+        message.textContent =
+            "Submitting booking...";
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/booking",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(booking)
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (result.success) {
+
+                message.className =
+                    "success";
+
+                message.textContent =
+                    "Booking submitted successfully.";
+
+                document
+                    .getElementById("bookingForm")
+                    .reset();
+
+                fee.value = "";
+
+            } else {
+
+                message.className =
+                    "error";
+
+                message.textContent =
+                    result.message ||
+                    "Booking failed.";
+
+            }
+
+        } catch (error) {
+
+            message.className =
+                "error";
+
+            message.textContent =
+                "Server se connection nahi ho raha.";
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

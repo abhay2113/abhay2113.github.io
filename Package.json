@@ -1,0 +1,14 @@
+{
+  "name": "globalmove-payment",
+  "version": "1.0.0",
+  "description": "GlobalMove Logistics Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

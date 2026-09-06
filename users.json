@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1787908165730,
+    "name": "Abhay kumar",
+    "email": "abhaykumar8436@gmail.com",
+    "passwordHash": "$2b$12$MvzIexC.LzbVFSOsBgnYJugbPl4z88HteGFu9MO8Y7.3KWfdgEZO.",
+    "createdAt": "2026-08-28T09:09:25.730Z"
+  },
+  {
+    "id": 1787909013555,
+    "name": "Abhay",
+    "email": "abhay8436@gmail.com",
+    "passwordHash": "$2b$12$QvPWa3.cpXb5Ip4niBaOwu/u7qacg6OgVXyVJj5rDQPaY978Acyty",
+    "createdAt": "2026-08-28T09:23:33.555Z"
+  },
+  {
+    "id": 1787909309664,
+    "name": "pwd",
+    "email": "abhaykumar33@gmail.com",
+    "passwordHash": "$2b$12$JVPbYRvwK/fpQuOPqIG5o.86N6vE2HgK8V1N3ql/ktNlL4ozKAi5u",
+    "createdAt": "2026-08-28T09:28:29.664Z"
+  }
+]
