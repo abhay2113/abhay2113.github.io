@@ -27,7 +27,33 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="HTML/course.html">Corse</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown(event)">
+                        Courses <span class="arrow">⌄</span>
+                    </a>
+
+                    <ul class="dropdown-menu" id="coursesDropdown">
+
+                        <li>
+                            <a href="HTML/advance.html">Advance Modular Course</a>
+                        </li>
+
+                        <li>
+                            <a href="HTML/basic.html">Basic Modular Course</a>
+                        </li>
+
+                        <li>
+                            <a href="HTML/competency.html">Competency Course</a>
+                        </li>
+
+                        <li>
+                            <a href="HTML/preparatory.html">Preparatory Course</a>
+                        </li>
+
+                    </ul>
+                </li>
+
                 <li><a href="HTML/bookcorse.html">Online Booking</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#why">Why Us</a></li>
@@ -774,11 +800,48 @@
             document.getElementById("navLinks").classList.toggle("active");
         }
 
+
+        /* NAVBAR LINKS */
+
         document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                document.getElementById("navLinks").classList.remove("active");
+
+            link.addEventListener("click", function (event) {
+
+                /*
+                 * Agar Courses dropdown hai,
+                 * to navbar hide MAT karo.
+                 */
+                if (this.closest(".dropdown")) {
+                    return;
+                }
+
+                /*
+                 * Baaki links par navbar hide hoga
+                 */
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
             });
+
         });
+
+
+        /* COURSES DROPDOWN */
+
+        function toggleDropdown(event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const dropdown =
+                document.getElementById("coursesDropdown");
+
+            dropdown.classList.toggle("show");
+        }
+
+
+        /* QUOTE */
 
         function sendQuote(event) {
 
