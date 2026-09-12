@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AIMT — Advance Modular Course</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #243a43;
+            background: #fff
+        }
+
+        .top {
+            height: 34px;
+            background: #eafff9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px
+        }
+
+        .browser {
+            background: #effffc;
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            gap: 9px
+        }
+
+        .browser .pill {
+            height: 35px;
+            flex: 1;
+            border-radius: 18px;
+            background: #fff;
+            border: 1px solid #d4dedb;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            color: #333
+        }
+
+        .browser b {
+            font-size: 22px;
+            font-weight: 400
+        }
+
+        .header {
+            background: #fff;
+            padding: 15px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #38506b
+        }
+
+        .logo-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 3px solid #466f93;
+            position: relative
+        }
+
+        .logo-mark:after {
+            content: "✦";
+            position: absolute;
+            left: 6px;
+            top: 3px;
+            color: #6e6b9d;
+            font-size: 18px
+        }
+
+        .book {
+            border: 2px solid #27a1e4;
+            border-radius: 5px;
+            background: white;
+            color: #3c7899;
+            padding: 9px 14px;
+            font-weight: bold
+        }
+
+        .nav {
+            height: 45px;
+            background: #31647f;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 20px
+        }
+
+        .menu {
+            color: #fff;
+            font-size: 27px
+        }
+
+        .hero {
+            min-height: 255px;
+            padding: 50px 25px;
+            background: linear-gradient(135deg, #fff2dc, #eee9de);
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .hero h1 {
+            font-size: 30px;
+            line-height: 1.05;
+            margin: 0 0 28px
+        }
+
+        .apply {
+            width: 215px;
+            background: #f39a00;
+            color: #fff;
+            border: 0;
+            padding: 14px 20px;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .apply span {
+            font-size: 25px
+        }
+
+        .courses {
+            position: relative;
+            padding: 35px 18px 55px;
+            min-height: 1100px;
+            background: linear-gradient(rgba(35, 32, 30, .78), rgba(35, 32, 30, .78)), url('pscrb.jpg') center/cover fixed
+        }
+
+        .courses h2 {
+            color: #fff;
+            text-align: center;
+            font-size: 23px;
+            line-height: 1.05;
+            margin: 0 0 36px
+        }
+
+        .courses h2 small {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 4px;
+            opacity: .8
+        }
+
+        .grid {
+            max-width: 760px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 34px 30px
+        }
+
+        .card {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #e4e4e4;
+            box-shadow: 0 4px 10px #0006;
+            background: center/cover no-repeat
+        }
+
+        .card:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(18, 79, 109, .62)
+        }
+
+        .content {
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+            padding: 30px 20px;
+            color: #fff
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 19px
+        }
+
+        .card p {
+            font-size: 13px;
+            line-height: 1.45;
+            margin: 0
+        }
+
+        .duration {
+            position: absolute;
+            z-index: 3;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 70px;
+            background: rgba(16, 198, 55, .82);
+            padding: 14px 18px;
+            color: #fff;
+            font-weight: bold
+        }
+
+        .duration strong {
+            display: block;
+            font-size: 15px
+        }
+
+        .duration small {
+            font-size: 11px
+        }
+
+        .play {
+            position: absolute;
+            right: 15px;
+            bottom: 20px;
+            font-size: 22px;
+            z-index: 4
+        }
+
+        .footer {
+            background: #28546e;
+            color: #fff;
+            padding: 35px 24px 70px
+        }
+
+        .footer-inner {
+            max-width: 760px;
+            margin: auto
+        }
+
+        .footer h3 {
+            font-size: 15px;
+            margin: 0 0 15px
+        }
+
+        .subscribe {
+            display: flex;
+            max-width: 520px;
+            margin-bottom: 22px
+        }
+
+        .subscribe input {
+            height: 42px;
+            flex: 1;
+            border: 0;
+            padding: 0 14px
+        }
+
+        .subscribe button {
+            width: 48px;
+            border: 0;
+            background: #2399df;
+            color: #fff;
+            font-size: 18px
+        }
+
+        .social {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 35px
+        }
+
+        .social i {
+            width: 34px;
+            height: 34px;
+            border: 2px solid #74b7db;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-style: normal;
+            font-weight: bold
+        }
+
+        .copy {
+            border-top: 1px solid #4d7489;
+            padding-top: 22px;
+            font-size: 10px;
+            line-height: 1.6;
+            color: #d0e0e8
+        }
+
+        .up {
+            position: fixed;
+            right: 18px;
+            bottom: 22px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #303a39;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            text-decoration: none;
+            z-index: 20
+        }
+
+        @media(max-width:650px) {
+            .header {
+                padding: 13px 20px
+            }
+
+            .logo {
+                font-size: 9px
+            }
+
+            .book {
+                font-size: 11px;
+                padding: 8px 10px
+            }
+
+            .hero {
+                min-height: 210px;
+                padding: 35px 24px
+            }
+
+            .hero h1 {
+                font-size: 27px
+            }
+
+            .courses {
+                padding: 35px 18px 55px;
+                min-height: 1150px;
+                background-attachment: scroll
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                max-width: 168px;
+                gap: 34px
+            }
+
+            .card {
+                height: 300px
+            }
+
+            .footer {
+                padding: 32px 18px 75px
+            }
+        }
+
+        .img{
+            height: 150px;
+            width: auto; 
+        }
+        span{
+            color: #2399df;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">3:29　 🟢 53%</div>
+    <div class="browser"><span>⌂</span>
+        <div class="pill">⚙　Globle<span>Move</span></div><b>＋</b><b>⋮</b>
+    </div>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-mark"></div>
+            <div>Asha International Institute<br>of Marine Technology (AIIMT)</div>
+        </div><button class="book">Online Booking　▶</button>
+    </header>
+    <nav class="nav">
+        <div class="menu">☰</div>
+    </nav>
+    <section class="hero">
+        <h1>ADVANCE MODULAR<br>COURSE</h1><button class="apply">◉　APPLY<br>　 ONLINE <span>›</span></button>
+    </section>
+    <section class="courses" id="courses">
+        <h2><small>WE OFFER COURSES FOR</small>ADVANCE MODULAR<br>COURSE</h2>
+        <div class="grid">
+            <article class="card" style="background-image:url('pscrb.jpg')">
+                <div class="content">
+                    <h3>PSCRB</h3>
+                    <p>Proficiency in Survival Craft and Rescue Boats</p>
+                    <img class="img" src="abhay.jpg">
+                </div>
+                <div class="duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+            <article class="card" style="background-image:url('mfa.jpg')">
+                <div class="content">
+                    <h3>MFA</h3>
+                    <p>Medical First Aid</p>
+                </div>
+                <div class="duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+            <article class="card" style="background-image:url('iasco.jpg')">
+                <div class="content">
+                    <h3>IASCO</h3>
+                    <p>Advanced Training For Oil Tanker Cargo Operations</p>
+                </div>
+                <div class="duration"><strong>10 DAYS</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+            <article class="card" style="background-image:url('hvm.jpg')">
+                <div class="content">
+                    <h3>HV-(M)</h3>
+                    <p>High Voltage Safety and Switch Gear</p>
+                </div>
+                <div class="duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+            <article class="card" style="background-image:url('aff.jpg')">
+                <div class="content">
+                    <h3>AFF</h3>
+                    <p>Advanced Fire Fighting</p>
+                </div>
+                <div class="duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+            <article class="card" style="background-image:url('rpscrb.jpg')">
+                <div class="content">
+                    <h3>R-PSCRB WITH PST</h3>
+                    <p>Ref. Proficiency in Survival Craft And Rescue Boats</p>
+                </div>
+                <div class="duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+            <article class="card" style="background-image:url('rut.jpg')">
+                <div class="content">
+                    <h3>RUT (O)</h3>
+                    <p>Deck Officer Re-validation (Operational)</p>
+                </div>
+                <div class="duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                <div class="play">▶</div>
+            </article>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-inner">
+            <h3>SUBSCRIBE WITH US</h3>
+            <form class="subscribe" onsubmit="event.preventDefault();alert('Thank you for subscribing!')"><input
+                    type="email" placeholder="enter your email address" required><button>✉</button></form>
+            <h3>CONNECT WITH US</h3>
+            <div class="social"><i>f</i><i>♥</i><i>▶</i></div>
+            <div class="copy">© Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, itaque.
+                Reserved.<br><br>Powered By <b>ALLYWING SOLUTIONS</b></div>
+        </div>
+    </footer>
+    <a class="up" href="#">⌃</a>
+</body>
+
+</html>
