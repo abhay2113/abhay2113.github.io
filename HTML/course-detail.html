@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course details and enquiry information for AIIMT maritime training.">
+    <title>Course Details | GlobalMove</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="../index.html">Global<span>Move</span></a>
+            <div class="menu" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#courses">Courses</a></li>
+                <li><a href="bookcorse.html">Online Booking</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="course-detail-page">
+        <section class="course-detail-hero">
+            <div class="container course-detail-hero-content">
+                <span class="badge" id="course-category">AIIMT MARITIME TRAINING</span>
+                <h1 id="course-name">Course details</h1>
+                <p id="course-description"></p>
+                <a class="btn primary" href="#course-enquiry">Enquire now →</a>
+            </div>
+        </section>
+
+        <section class="course-detail-content">
+            <div class="container">
+                <h2>Course Description</h2>
+                <p id="course-overview"></p>
+
+                <h3>Course objectives</h3>
+                <p id="course-objectives"></p>
+
+                <h3>Entry standards</h3>
+                <p>Please contact our team to confirm the eligibility requirements and documents needed for this course.</p>
+
+                <h3>Required attendance</h3>
+                <p>Attendance requirements are confirmed by the institute during booking.</p>
+
+                <form class="course-enquiry" id="course-enquiry" onsubmit="sendQuote(event)">
+                    <h2>Enquire now</h2>
+                    <input class="input" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+                    <input class="input" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+                    <input class="input" name="phone" type="tel" placeholder="Phone number" autocomplete="tel" required>
+                    <input type="hidden" name="course" id="enquiry-course">
+                    <button class="btn primary" type="submit">Send enquiry →</button>
+                </form>
+
+                <div class="course-summary" aria-label="Course information">
+                    <div><small>Duration</small><strong id="course-duration"></strong></div>
+                    <div><small>Course type</small><strong id="course-type"></strong></div>
+                    <div><small>Course fee</small><strong id="course-fee"></strong></div>
+                    <a class="btn primary" href="bookcorse.html">Apply now →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>GlobalMove Logistics</h3>
+                <p>Reliable maritime training and logistics solutions to help move your career forward.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#courses">Courses</a></li>
+                    <li><a href="bookcorse.html">Online Booking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Contact the institute to confirm course availability and fees.</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 GlobalMove Logistics. All Rights Reserved.</div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+    <script src="../JS/course-detail.js"></script>
+</body>
+
+</html>
