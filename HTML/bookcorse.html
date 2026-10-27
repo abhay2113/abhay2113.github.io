@@ -408,14 +408,8 @@
                         <select id="course">
                             <option value="">Select</option>
                             <option value="TASCO">TASCO</option>
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label>Type*</label>
-
-
-                                </div>
-                                <option value="HV-(M)">HV-(M)</option>
-                                <option value="OTCTO">OTCTO</option>
+                            <option value="HV-(M)">HV-(M)</option>
+                            <option value="OTCTO">OTCTO</option>
                         </select>
 
                     </div>
@@ -536,7 +530,8 @@
 
         /* ================= EMAILJS BOOKING ================= */
         function sendBookingEmail() {
-            const type = document.getElementById("type").value;
+            const selectedBookingType = document.querySelector('input[name="bookingType"]:checked');
+            const type = selectedBookingType ? selectedBookingType.value : "";
             const course = document.getElementById("course").value;
             const batch = document.getElementById("batch").value;
             const fee = document.getElementById("fee").value;
