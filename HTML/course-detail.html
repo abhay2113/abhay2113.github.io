@@ -7,6 +7,7 @@
     <meta name="description" content="Course details and enquiry information for AIIMT maritime training.">
     <title>Course Details | GlobalMove</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -49,13 +50,14 @@
                 <h3>Required attendance</h3>
                 <p>Attendance requirements are confirmed by the institute during booking.</p>
 
-                <form class="course-enquiry" id="course-enquiry" onsubmit="sendQuote(event)">
+                <form class="course-enquiry" id="course-enquiry" onsubmit="sendCourseEnquiry(event)">
                     <h2>Enquire now</h2>
                     <input class="input" name="name" type="text" placeholder="Your name" autocomplete="name" required>
                     <input class="input" name="email" type="email" placeholder="Email address" autocomplete="email" required>
                     <input class="input" name="phone" type="tel" placeholder="Phone number" autocomplete="tel" required>
                     <input type="hidden" name="course" id="enquiry-course">
                     <button class="btn primary" type="submit">Send enquiry →</button>
+                    <p id="enquiry-status" role="status" aria-live="polite"></p>
                 </form>
 
                 <div class="course-summary" aria-label="Course information">

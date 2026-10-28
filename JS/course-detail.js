@@ -64,6 +64,10 @@ const courses = {
     }
 };
 
+emailjs.init({
+    publicKey: "UPJgWYUTS-uNOESHF"
+});
+
 const course = courses[new URLSearchParams(window.location.search).get("course")];
 
 if (course) {
@@ -79,6 +83,47 @@ if (course) {
     document.getElementById("course-type").textContent = course.type;
     document.getElementById("course-fee").textContent = course.fee;
     document.getElementById("enquiry-course").value = course.name;
+
+    window.sendCourseEnquiry = function (event) {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        const button = form.querySelector('button[type="submit"]');
+        const status = document.getElementById("enquiry-status");
+        const formData = new FormData(form);
+        const templateParams = {
+            course: course.name,
+            course_name: course.name,
+            name: formData.get("name").trim(),
+            candidate_name: formData.get("name").trim(),
+            email: formData.get("email").trim(),
+            phone: formData.get("phone").trim(),
+            mobile: formData.get("phone").trim(),
+            duration: course.duration,
+            course_duration: course.duration,
+            course_type: course.type,
+            fee: course.fee,
+            course_fee: course.fee,
+            reply_to: formData.get("email").trim()
+        };
+
+        button.disabled = true;
+        status.textContent = "Sending your enquiry...";
+
+        emailjs.send("service_4ltkjwh", "template_t3jel75", templateParams)
+            .then(function () {
+                status.textContent = "Your enquiry was sent successfully. We will contact you soon.";
+                form.reset();
+                document.getElementById("enquiry-course").value = course.name;
+            })
+            .catch(function (error) {
+                status.textContent = "Could not send your enquiry. Please try again.";
+                console.error("EmailJS course enquiry failed:", error);
+            })
+            .finally(function () {
+                button.disabled = false;
+            });
+    };
 } else {
     document.title = "Course details unavailable | GlobalMove";
     document.getElementById("course-name").textContent = "Course details unavailable";
