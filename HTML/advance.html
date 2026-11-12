@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo/fevicon.png">
+    <title>Advance Modular Course | MarineCourse</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body class="course-landing-page">
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="../index.html">Marine<span>Course</span></a>
+            <div class="menu" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                
+                   <li class="dropdown">
+                    <button
+                        class="dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="coursesDropdown"
+                        onclick="toggleDropdown(event)"
+                    >
+                        Courses <span class="arrow" aria-hidden="true">▾</span>
+                    </button>
+
+                    <ul class="dropdown-menu" id="coursesDropdown">
+
+                        <li>
+                            <a href="../HTML/advance.html">Advance Modular Course</a>
+                        </li>
+                        <li>
+                            <a href="../HTML/value_added.html">Value Added Course</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li><a href="bookcorse.html">Online Booking</a></li>
+                <li><a href="bookcorse.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div class="hero-slide active">
+                <img src="../images/ship.jpg" alt="Ship at sea">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="../images/container.jpg" alt="Cargo containers ready for transport">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="../images/fire.webp" alt="Maritime fire safety training">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="course-hero-content">
+                <div class="badge">ABHAY INTERNATIONAL INSTITUTE OF MARINE TECHNOLOGY</div>
+                <h1>Advance Modular <span>Course</span></h1>
+                <p>Build advanced maritime skills with professional training designed to support your career at sea.</p>
+                <div class="buttons">
+                    <a href="#courses" class="btn primary">Explore Courses →</a>
+                    <a href="bookcorse.html" class="btn secondary">Book Online</a>
+                </div>
+            </div>
+            <div class="slider-dots" aria-label="Hero image slides">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+                <span class="slider-dot"></span>
+            </div>
+        </section>
+
+        <section class="course-list" id="courses">
+            <div class="section-title">
+                <small>Advance Modular Training</small>
+                <h2>Explore Our Courses</h2>
+                <p>Practical maritime courses to help you develop essential safety, medical and operational skills.</p>
+            </div>
+
+            <div class="course-grid">
+                <a class="course-card-link" href="course-detail.html?course=pscrb">
+                <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                    <div class="course-card-content">
+                        <h3>PSCRB</h3>
+                        <p>Proficiency in Survival Craft and Rescue Boats</p>
+                    </div>
+                    <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mfa">
+                <article class="course-card" style="background-image: url('../images/fire.webp')">
+                    <div class="course-card-content">
+                        <h3>MFA</h3>
+                        <p>Medical First Aid</p>
+                    </div>
+                    <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=iasco">
+                <article class="course-card" style="background-image: url('../images/container.jpg')">
+                    <div class="course-card-content">
+                        <h3>IASCO</h3>
+                        <p>Advanced Training For Oil Tanker Cargo Operations</p>
+                    </div>
+                    <div class="course-duration"><strong>10 DAYS</strong><small>COURSE</small></div>
+                </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=hv-m">
+                <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                    <div class="course-card-content">
+                        <h3>HV-(M)</h3>
+                        <p>High Voltage Safety and Switch Gear</p>
+                    </div>
+                    <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=aff">
+                <article class="course-card" style="background-image: url('../images/fire.webp')">
+                    <div class="course-card-content">
+                        <h3>AFF</h3>
+                        <p>Advanced Fire Fighting</p>
+                    </div>
+                    <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=r-pscrb-pst">
+                <article class="course-card" style="background-image: url('../images/container.jpg')">
+                    <div class="course-card-content">
+                        <h3>R-PSCRB WITH PST</h3>
+                        <p>Ref. Proficiency in Survival Craft And Rescue Boats</p>
+                    </div>
+                    <div class="course-duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=rut-o">
+                <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                    <div class="course-card-content">
+                        <h3>RUT (O)</h3>
+                        <p>Deck Officer Re-validation (Operational)</p>
+                    </div>
+                    <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="course-footer-grid">
+            <div>
+                <h3>GlobalMove</h3>
+                <p>Maritime training and logistics solutions to help move your career forward.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="value_added.html">Value Added Course</a></li>
+                    <li><a href="bookcorse.html">Online Booking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Stay Connected</h3>
+                <p>Subscribe for course updates.</p>
+                <form class="subscribe" onsubmit="event.preventDefault(); alert('Thank you for subscribing!')">
+                    <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+                    <button type="submit" aria-label="Subscribe">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">© GlobalMove. All rights reserved. | Powered by ALLYWING SOLUTIONS</div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

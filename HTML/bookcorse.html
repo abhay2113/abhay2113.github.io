@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo/fevicon.png">
+    <title>MarineCourse | Book Course</title>
+
+    <!-- EmailJS SDK -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "UPJgWYUTS-uNOESHF",
+            });
+        })();
+    </script>
+</head>
+
+<body class="booking-page">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="topbar">
+            <div class="logo">
+                Marine<span>Course</span>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-box">
+                    <small>MAIL AT</small>
+                    <p>support@globalmove.com</p>
+                </div>
+                <div class="contact-box">
+                    <small>CALL US</small>
+                    <p>+91 91517 45693</p>
+                </div>
+            </div>
+
+            <a href="../index.html" class="home-btn">Home</a>
+        </div>
+
+        <div class="notice">
+            PLEASE MAKE SURE YOUR DETAILS
+            <span>ARE CORRECT BEFORE BOOKING</span>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="page">
+        <h1 class="page-title">Book Course</h1>
+
+        <div class="booking-box">
+            <div class="booking-grid">
+
+                <!-- ================= LEFT ================= -->
+                <div class="booking-column">
+                    <h2>Course Booking</h2>
+
+                    <div class="booking-type">
+                        <label class="radio-item">
+                            <input type="radio" name="bookingType" value="Course Booking" checked>
+                            Course Booking
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="bookingType" value="Exit Exam">
+                            Exit Exam
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="bookingType" value="Request Certificate">
+                            Request Certificate
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseType">Course Type*</label>
+                        <select id="courseType" required>
+                            <option value="">Select course type</option>
+                            <option value="Advance Modular Course">Advance Modular Course</option>
+                            <option value="Value Added Course">Value Added Course</option>
+                            <option value="Other Courses">Other Courses</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Course*</label>
+                        <select id="course" required disabled>
+                            <option value="">Select course type first</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Batch*</label>
+                        <select id="batch">
+                            <option value="">Select</option>
+                            <option>Batch 1</option>
+                            <option>Batch 2</option>
+                            <option>Batch 3</option>
+                            <option>Batch 4</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fee (INR)</label>
+                        <input type="text" id="fee" placeholder="Select course" readonly>
+                    </div>
+
+                    <div id="cartMessage" class="success">
+                        Course added successfully.
+                    </div>
+                </div>
+
+                <!-- ================= RIGHT ================= -->
+                <div class="booking-column">
+                    <h2>Personal Details</h2>
+
+                    <div class="personal-form">
+                        <div class="form-group">
+                            <label>Candidate Name*</label>
+                            <input type="text" id="candidateName" placeholder="PLEASE ENTER A NAME">
+                        </div>
+
+                        <div class="form-group">
+                            <label>ID/Passport No*</label>
+                            <input type="text" id="passport" placeholder="ENTER ID/PASSPORT NO">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Date of Birth*</label>
+                            <input type="date" id="dob">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mobile No. (WhatsApp No.)*</label>
+                            <input type="tel" id="mobile" placeholder="Enter mobile No." maxlength="10">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Id*</label>
+                            <input type="email" id="email" placeholder="Please Enter Valid Email ID">
+                        </div>
+
+                        <label class="terms">
+                            <input type="checkbox" id="terms">
+                            <span>
+                                I Agree the <a href="#">Terms and Conditions</a>
+                            </span>
+                        </label>
+
+                        <button type="button" class="pay-btn" onclick="sendBookingEmail()">
+                            confirm booking
+                        </button>
+
+                        <div id="successMessage" class="success">
+                            Booking details sent successfully to your email!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        © 2026 GlobalMove Logistics. All Rights Reserved.
+    </footer>
+
+    <script>
+        /* ================= COURSE FEES ================= */
+        const courseCatalog = {
+            "Advance Modular Course": [
+                "PSCRB",
+                "MFA",
+                "IASCO",
+                "HV-(M)",
+                "AFF",
+                "R-PSCRB WITH PST",
+                "RUT (O)"
+            ],
+            "Value Added Course": [
+                "Marine Hazmat Course",
+                "Marine Fire Watchman Course",
+                "Marine Gangway Operator Training",
+                "Marine Inspector Course",
+                "Marine PSB Course",
+                "Marine Scaffolding Familiarization Course (SFC)",
+                "Roustabout Course",
+                "Rigging and Scaffolding Training",
+                "Marine Safe Lifting & Hoisting Course",
+                "Marine Forklift Operator Course",
+                "Scaffolding Inspector Course",
+                "IADC Rig Pass Course",
+                "HUET OPITO Approved — Code 5095",
+                "BOSIET with EBS (OPITO Approved) — Code 5700",
+                "Helicopter Underwater Escape Training (HUET)",
+                "Designated Person Ashore (DPA)",
+                "Marine Mental Health Awareness",
+                "Risk Assessment & Incident Investigation (RAII)",
+                "Maritime English Course (MEC)",
+                "Bridge Team Management Refresher (BTM-R)",
+                "Bridge Team Resource Management (BTRM)",
+                "Bridge Team Resource Management (BTRM)",
+                "Bridge Resource Management Refresher (BRM-R)",
+                "Bridge Team Resource Management Refresher (BTRM-Refresher)",
+                "Bridge Team Management (BTM)",
+                "Liquid Cargo Handling Simulator Training (LCHS)",
+                "LNG Cargo & Ballast Handling Simulator Training",
+                "Crew Safety Course (CSC)",
+                "Working Safety on Height (WSH)",
+                "Crowd & Crisis Management (CCM)",
+                "Accident Investigation (AI)",
+                "Ice Navigation (INC)",
+                "Company Security Officer (CSO)",
+                "Basic Offshore Safety Induction & Emergency Training (BOSIET)",
+                "Hydrogen Sulphide Safety (H2S)",
+                "Hydrogen Sulphide Safety (H2S)",
+                "Helicopter Landing Officer (HLO)",
+                "Helicopter Landing Assistant (HLA)",
+                "H2S OPITO Approved — Code 9014",
+                "CA-EBS (Compressed Air Emergency Breathing System)",
+                "Rigging & Slinging Course",
+                "Lifting & Hoisting Course",
+                "Banksman & Slinger Training Course",
+                "Offshore Emergency Helideck Team Member (OEHTM)",
+                "Drilling Familiarization Course",
+                "Winch Operator Course",
+                "Offshore Emergency Response Team Member (OERTM)",
+                "Rig Safety Officer Course",
+                "Crane Operator Stage Course"
+            ],
+            "Other Courses": ["TASCO", "HV-(M)", "OTCTO"]
+        };
+
+        const courseTypeSelect = document.getElementById("courseType");
+        const courseSelect = document.getElementById("course");
+        const courseFees = {
+            "TASCO": "5500",
+            "HV-(M)": "6000",
+            "OTCTO": "4500",
+            "Marine Hazmat Course": "5000",
+        };
+
+        function updateCourseOptions() {
+            const courses = courseCatalog[courseTypeSelect.value] || [];
+            courseSelect.replaceChildren(new Option(
+                courses.length ? "Select course" : "Select course type first",
+                ""
+            ));
+            courses.forEach(function (courseName) {
+                courseSelect.add(new Option(courseName, courseName));
+            });
+            courseSelect.disabled = courses.length === 0;
+            document.getElementById("fee").value = "";
+        }
+
+        courseTypeSelect.addEventListener("change", updateCourseOptions);
+
+        courseSelect.addEventListener("change", function () {
+            const fee = document.getElementById("fee");
+            const courseFee = courseFees[this.value];
+
+            if (courseFee) {
+                fee.value = "₹ " + courseFee;
+            } else {
+                fee.value = this.value ? "To be confirmed" : "";
+            }
+        });
+
+        /* ================= ADD TO CART ================= */
+        function addToCart() {
+            const course = document.getElementById("course").value;
+            const batch = document.getElementById("batch").value;
+
+            if (!course || !batch) {
+                alert("Please select Course and Batch.");
+                return;
+            }
+
+            document.getElementById("cartMessage").style.display = "block";
+        }
+
+        /* ================= EMAILJS BOOKING ================= */
+        function sendBookingEmail() {
+            const selectedBookingType = document.querySelector('input[name="bookingType"]:checked');
+            const type = selectedBookingType ? selectedBookingType.value : "";
+            const courseType = courseTypeSelect.value;
+            const course = document.getElementById("course").value;
+            const batch = document.getElementById("batch").value;
+            const fee = document.getElementById("fee").value;
+            const name = document.getElementById("candidateName").value.trim();
+            const passport = document.getElementById("passport").value.trim();
+            const dob = document.getElementById("dob").value;
+            const mobile = document.getElementById("mobile").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const terms = document.getElementById("terms").checked;
+
+            /* VALIDATION */
+            if (!type || !courseType || !course || !batch || !name || !passport || !dob || !mobile || !email) {
+                alert("Please fill all required details.");
+                return;
+            }
+
+            if (!terms) {
+                alert("Please agree to the Terms and Conditions.");
+                return;
+            }
+
+            /* TEMPLATE PARAMS TO MATCH EMAILJS TEMPLATE */
+            const templateParams = {
+                type: type,
+                course_type: courseType,
+                course: course,
+                batch: batch,
+                fee: fee || "To be confirmed",
+                candidate_name: name,
+                passport: passport,
+                dob: dob,
+                mobile: mobile,
+                email: email
+            };
+
+            /* SEND EMAIL VIA EMAILJS */
+            emailjs.send("service_4ltkjwh", "template_t3jel75", templateParams)
+                .then(function (response) {
+                    const successMsg = document.getElementById("successMessage");
+                    successMsg.style.display = "block";
+                    successMsg.innerText = "Booking details sent successfully to your email!";
+                    console.log("SUCCESS!", response.status, response.text);
+                }, function (error) {
+                    alert("Failed to send booking details. Please try again.");
+                    console.log("FAILED...", error);
+                });
+        }
+    </script>
+
+</body>
+
+</html>

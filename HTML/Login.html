@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo/fevicon.png">
+    <title>Login | MarineCourse</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-shell">
+        <div class="auth-card">
+            <div class="auth-logo">
+                Marine<span>Course</span>
+            </div>
+
+            <h1>Login</h1>
+
+            <form id="loginForm" class="auth-form">
+                <input class="auth-input" type="email" id="email" placeholder="Email Address" required>
+                <input class="auth-input" type="password" id="password" placeholder="Password" required>
+                <button class="auth-action" type="submit">Login</button>
+            </form>
+
+            <div id="message" class="auth-message"></div>
+
+            <div class="auth-link-row">
+                Don't have an account?
+                <a href="Register.html">Register</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", async function(e) {
+
+                e.preventDefault();
+
+                const email =
+                    document.getElementById("email").value;
+
+                const password =
+                    document.getElementById("password").value;
+
+                const message =
+                    document.getElementById("message");
+
+                try {
+
+                    const response = await fetch(
+                        "/api/login",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                email,
+                                password
+                            })
+                        }
+                    );
+
+                    const data = await response.json();
+
+                    message.textContent = data.message;
+
+                    if (data.success) {
+
+                        message.style.color = "#19d3f3";
+
+                        localStorage.setItem(
+                            "globalmoveUser",
+                            JSON.stringify(data.user)
+                        );
+
+                        setTimeout(() => {
+                            window.location.href =
+                                "../index.html";
+                        }, 800);
+
+                    } else {
+
+                        message.style.color = "red";
+                    }
+
+                } catch (error) {
+
+                    message.textContent =
+                        "Server connection failed.";
+
+                    message.style.color = "red";
+                }
+
+            });
+
+            
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo/fevicon.png">
+    <title>Value Added Courses | MarineCourse</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body class="course-landing-page">
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="../index.html">Marine<span>Course</span></a>
+            <div class="menu" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                
+
+                 <li class="dropdown">
+                    <button
+                        class="dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="coursesDropdown"
+                        onclick="toggleDropdown(event)"
+                    >
+                        Courses <span class="arrow" aria-hidden="true">▾</span>
+                    </button>
+
+                    <ul class="dropdown-menu" id="coursesDropdown">
+
+                        <li>
+                            <a href="../HTML/advance.html">Advance Modular Course</a>
+                        </li>
+                        <li>
+                            <a href="../HTML/value_added.html">Value Added Course</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li><a href="bookcorse.html">Online Booking</a></li>
+                <li><a href="bookcorse.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div class="hero-slide active">
+                <img src="../images/ship.jpg" alt="Ship at sea">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="../images/container.jpg" alt="Cargo containers ready for transport">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="../images/fire.webp" alt="Maritime fire safety training">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="course-hero-content">
+                <div class="badge">ABHAY INTERNATIONAL INSTITUTE OF MARINE TECHNOLOGY</div>
+                <h1>Value Added <span>Courses</span></h1>
+                <p>Explore practical maritime training programmes designed to build specialist skills for a safer, stronger career at sea.</p>
+                <div class="buttons">
+                    <a href="#courses" class="btn primary">Explore Courses →</a>
+                    <a href="bookcorse.html" class="btn secondary">Book Online</a>
+                </div>
+            </div>
+            <div class="slider-dots" aria-label="Hero image slides">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+                <span class="slider-dot"></span>
+            </div>
+        </section>
+
+        <section class="course-list" id="courses">
+            <div class="section-title">
+                <small>Specialist Maritime Training</small>
+                <h2>Value Added Courses</h2>
+                <p>Explore specialist maritime and offshore training programmes to build practical skills for your career.</p>
+            </div>
+
+            <div class="course-grid">
+                <a class="course-card-link" href="course-detail.html?course=mhc" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Hazmat Course</h3>
+                            <p>Learn safe handling practices for hazardous materials in maritime operations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mfwc" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Fire Watchman Course</h3>
+                            <p>Prepare to monitor work areas and recognise fire hazards during marine work.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mgot" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Gangway Operator Training</h3>
+                            <p>Build skills for safe gangway operation and access between vessels and shore.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mic" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Inspector Course</h3>
+                            <p>Develop practical knowledge of inspection procedures in marine operations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=PBC" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine PSB Course</h3>
+                            <p>Training for safe personnel transfer using a basket in offshore operations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=SFC" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Scaffolding Familiarization Course (SFC)</h3>
+                            <p>Get familiar with scaffolding systems and safe practices in marine settings.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=rc" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Roustabout Course</h3>
+                            <p>Learn the practical skills and safety basics needed for offshore roustabout work.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=rigging-scaffolding" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Rigging and Scaffolding Training</h3>
+                            <p>Build essential rigging and scaffolding skills for offshore work environments.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mslh" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Safe Lifting &amp; Hoisting Course</h3>
+                            <p>Learn safe practices for lifting and hoisting operations in marine settings.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mfo" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Forklift Operator Course</h3>
+                            <p>Develop the operating skills and safety awareness needed to handle forklifts.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=scaffolding-inspector" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Scaffolding Inspector Course</h3>
+                            <p>Learn how to inspect scaffolding and identify potential safety issues.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=iadc" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>IADC Rig Pass Course</h3>
+                            <p>Build foundational safety awareness for work on drilling rigs and related sites.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=huetoac" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>HUET OPITO Approved — Code 5095</h3>
+                            <p>Training in helicopter underwater escape procedures for offshore travel.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=bosiet" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>BOSIET with EBS (OPITO Approved) — Code 5700</h3>
+                            <p>Basic offshore safety and emergency response training, including EBS.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=huet" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Helicopter Underwater Escape Training (HUET)</h3>
+                            <p>Practise escape procedures for an aircraft emergency at sea.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=DPA" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Designated Person Ashore (DPA)</h3>
+                            <p>Understand the designated person’s role in supporting shipboard safety management.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=mmha" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Marine Mental Health Awareness</h3>
+                            <p>Promote mental health awareness and wellbeing in maritime workplaces.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=RAII" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Risk Assessment &amp; Incident Investigation (RAII)</h3>
+                            <p>Learn to assess risks, investigate incidents and identify preventive measures.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=MEC" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Maritime English Course (MEC)</h3>
+                            <p>Strengthen English communication skills for maritime work and operations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BTM-R" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Bridge Team Management Refresher (BTM-R)</h3>
+                            <p>Refresh bridge teamwork, communication and decision-making practices.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BTRM" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Bridge Team Resource Management (BTRM)</h3>
+                            <p>Develop effective teamwork and resource management on the bridge.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BTRM-2" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Bridge Team Resource Management (BTRM)</h3>
+                            <p>Build communication and coordination skills for safe bridge operations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BRM-R" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Bridge Resource Management Refresher (BRM-R)</h3>
+                            <p>Refresh resource management practices for bridge teams.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BTRM-Re" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Bridge Team Resource Management Refresher (BTRM-Refresher)</h3>
+                            <p>Reinforce bridge team communication and decision-making skills.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BTM" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Bridge Team Management (BTM)</h3>
+                            <p>Develop the teamwork and operational skills needed for effective bridge management.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=LCHS" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Liquid Cargo Handling Simulator Training (LCHS)</h3>
+                            <p>Practise liquid cargo handling procedures in a simulator environment.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=LCBHST" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>LNG Cargo &amp; Ballast Handling Simulator Training</h3>
+                            <p>Train in LNG cargo and ballast handling using a simulator.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=CSC" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Crew Safety Course (CSC)</h3>
+                            <p>Build awareness of safe practices and emergency response for crew members.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=WSH" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Working Safety on Height (WSH)</h3>
+                            <p>Learn safe working practices and hazard awareness for work at height.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=CCM" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Crowd &amp; Crisis Management (CCM)</h3>
+                            <p>Prepare to manage crowds and respond effectively to crisis situations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=AI" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Accident Investigation (AI)</h3>
+                            <p>Learn how to analyse incidents and identify measures to prevent recurrence.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=INC" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Ice Navigation (INC)</h3>
+                            <p>Build knowledge of navigation challenges and safe operations in icy waters.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=CSO" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Company Security Officer (CSO)</h3>
+                            <p>Understand company security responsibilities and maritime security procedures.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=BOSIET" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Basic Offshore Safety Induction &amp; Emergency Training (BOSIET)</h3>
+                            <p>Prepare for offshore work with essential safety and emergency training.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=H2S" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Hydrogen Sulphide Safety (H2S)</h3>
+                            <p>Learn essential safety practices for work in areas where H2S may be present.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=H2S-OPITO" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Hydrogen Sulphide Safety (H2S)</h3>
+                            <p>Build awareness of H2S hazards and the safety procedures used to manage them.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=HLO" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Helicopter Landing Officer (HLO)</h3>
+                            <p>Prepare to coordinate safe helicopter landing operations at offshore facilities.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=HLA" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Helicopter Landing Assistant (HLA)</h3>
+                            <p>Develop skills to assist with helicopter landing operations and safety checks.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=H2S-2" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>H2S OPITO Approved — Code 9014</h3>
+                            <p>OPITO-approved training covering H2S hazard awareness and emergency response.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=CA-EBS" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>CA-EBS (Compressed Air Emergency Breathing System)</h3>
+                            <p>Learn the use of compressed air emergency breathing systems and related procedures.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Rigging-Slinging" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Rigging &amp; Slinging Course</h3>
+                            <p>Learn safe rigging, slinging and load-handling practices.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Lifting-Hoisting" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Lifting &amp; Hoisting Course</h3>
+                            <p>Build knowledge of safe lifting operations, equipment and procedures.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Banksman-Slinger" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Banksman &amp; Slinger Training Course</h3>
+                            <p>Practise safe load signalling, slinging and communication during lifting work.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=OEHTM" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Offshore Emergency Helideck Team Member (OEHTM)</h3>
+                            <p>Prepare helideck team members to support emergency response offshore.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Drilling-Familiarization" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Drilling Familiarization Course</h3>
+                            <p>Get familiar with drilling operations, equipment and the offshore work environment.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Winch-Operator" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Winch Operator Course</h3>
+                            <p>Develop safe operating skills for winch equipment and operations.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=OERTM" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Offshore Emergency Response Team Member (OERTM)</h3>
+                            <p>Prepare to support emergency response as part of an offshore team.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Rig-Safety-Officer" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Rig Safety Officer Course</h3>
+                            <p>Build knowledge of safety oversight and hazard prevention on drilling rigs.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=Crane-Operator" target="_blank" rel="noopener noreferrer">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>Crane Operator Stage Course</h3>
+                            <p>Develop practical crane operating skills and safe lifting practices.</p>
+                        </div>
+                        <div class="course-duration"><strong>5 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="course-footer-grid">
+            <div>
+                <h3>GlobalMove</h3>
+                <p>Maritime training and logistics solutions to help move your career forward.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <!-- <li><a href="basic.html">Basic Course</a></li> -->
+                    <li><a href="advance.html">Advance Course</a></li>
+                    <!-- <li><a href="value_added.html">Value Added Courses</a></li> -->
+                    <li><a href="bookcorse.html">Online Booking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Stay Connected</h3>
+                <p>Subscribe for course updates.</p>
+                <form class="subscribe" onsubmit="event.preventDefault(); alert('Thank you for subscribing!')">
+                    <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+                    <button type="submit" aria-label="Subscribe">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">© GlobalMove. All rights reserved. | Powered by ALLYWING SOLUTIONS</div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
