@@ -463,6 +463,9 @@ emailjs.init({
 const course = courses[new URLSearchParams(window.location.search).get("course")];
 
 if (course) {
+    const courseImage = getCourseImageUrl(course.name);
+    document.querySelector(".course-detail-hero").style.backgroundImage =
+        `linear-gradient(90deg, rgba(5, 15, 30, .88), rgba(5, 15, 30, .48)), url("${courseImage}")`;
     document.title = `${course.name} | MarineCourse`;
     document.getElementById("course-name").textContent = course.name;
     document.getElementById("course-category").textContent = course.type;

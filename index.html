@@ -46,17 +46,17 @@
                         </li>
 
                         <li>
-                            <a href="HTML/advance.html">Advance Modular Course</a>
+                            <a href="HTML/Advance Modular Course.html">Advance Modular Course</a>
                         </li>
 
                         <li>
-                            <a href="HTML/value_added.html">Value Added Course</a>
+                            <a href="HTML/Value Added Course.html">Value Added Course</a>
                         </li>
 
                     </ul>
                 </li>
 
-                <li><a href="HTML/bookcorse.html">Online Booking</a></li>
+                <li><a href="HTML/Book Course.html">Online Booking</a></li>
                 <li><a href="#why">Why Us</a></li>
                 <!-- <li><a href="Register.html">Register</a></li> -->
             </ul>
@@ -102,7 +102,7 @@
                         Explore Courses →
                     </a>
 
-                    <a href="HTML/bookcorse.html" class="btn secondary">
+                    <a href="HTML/Book Course.html" class="btn secondary">
                         Book a Course
                     </a>
 
@@ -147,7 +147,7 @@
                         Explore Courses →
                     </a>
 
-                    <a href="HTML/bookcorse.html" class="btn secondary">
+                    <a href="HTML/Book Course.html" class="btn secondary">
                         Book a Course
                     </a>
 
@@ -194,7 +194,7 @@
                         View Courses →
                     </a>
 
-                    <a href="HTML/bookcorse.html" class="btn secondary">
+                    <a href="HTML/Book Course.html" class="btn secondary">
                         Online Booking
                     </a>
 
@@ -224,7 +224,7 @@
 
         <div class="hero-cards">
 
-            <a class="hero-card yellow" href="HTML/advance.html" aria-label="Explore advance modular maritime courses">
+            <a class="hero-card yellow" href="HTML/Advance Modular Course.html" aria-label="Explore advance modular maritime courses">
 
                 <div class="hero-icon">
                     🚢
@@ -252,7 +252,7 @@
             </a>
 
 
-            <a class="hero-card blue" href="HTML/value_added.html" aria-label="Explore value-added maritime courses">
+            <a class="hero-card blue" href="HTML/Value Added Course.html" aria-label="Explore value-added maritime courses">
 
                 <div class="hero-icon">
                     📦
@@ -280,7 +280,7 @@
             </a>
 
 
-            <a class="hero-card yellow" href="HTML/bookcorse.html" aria-label="Book a maritime course online">
+            <a class="hero-card yellow" href="HTML/Book Course.html" aria-label="Book a maritime course online">
 
                 <div class="hero-icon">
                     ✓
@@ -486,7 +486,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Training Areas</a></li>
                     <li><a href="#courses">Courses</a></li>
-                    <li><a href="HTML/bookcorse.html">Online Booking</a></li>
+                    <li><a href="HTML/Book Course.html">Online Booking</a></li>
                 </ul>
             </div>
 
@@ -521,8 +521,6 @@
         const courseSlider = document.getElementById("courseSlider");
         const courseSliderPrevious = document.getElementById("courseSliderPrevious");
         const courseSliderNext = document.getElementById("courseSliderNext");
-        const courseImages = ["images/ship.jpg", "images/container.jpg", "images/fire.webp"];
-
         const basicCourses = [
             {
                 id: "otcto",
@@ -678,7 +676,7 @@
             }
         ];
 
-        [...basicCourses, ...advancedCourses, ...valueAddedCourses, ...additionalCourses].forEach((course, index) => {
+        [...basicCourses, ...advancedCourses, ...valueAddedCourses, ...additionalCourses].forEach(course => {
             const link = document.createElement("a");
             link.className = "course-card-link";
             link.href = `HTML/course-detail.html?course=${encodeURIComponent(course.id)}`;
@@ -689,7 +687,7 @@
             const imageContainer = document.createElement("div");
             imageContainer.className = "card-img-container";
             const image = document.createElement("img");
-            image.src = courseImages[index % courseImages.length];
+            image.src = getCourseImageUrl(course.title);
             image.alt = "";
             image.loading = "lazy";
             imageContainer.appendChild(image);
