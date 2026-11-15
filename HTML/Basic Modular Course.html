@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo/fevicon.png">
+    <title>Basic Modular Course | MarineCourse</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body class="course-landing-page">
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="../index.html">Marine<span>Course</span></a>
+            <div class="menu" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li class="dropdown">
+                    <button
+                        class="dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="coursesDropdown"
+                        onclick="toggleDropdown(event)"
+                    >
+                        Courses <span class="arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <ul class="dropdown-menu" id="coursesDropdown">
+                        <li><a href="Basic Modular Course.html">Basic Modular Course</a></li>
+                        <li><a href="advance.html">Advance Modular Course</a></li>
+                        <li><a href="value_added.html">Value Added Course</a></li>
+                    </ul>
+                </li>
+                <li><a href="bookcorse.html">Online Booking</a></li>
+                <li><a href="bookcorse.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div class="hero-slide active">
+                <img src="../images/ship.jpg" alt="Ship at sea">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="../images/container.jpg" alt="Cargo containers ready for transport">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="../images/fire.webp" alt="Maritime fire safety training">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="course-hero-content">
+                <div class="badge">ABHAY INTERNATIONAL INSTITUTE OF MARINE TECHNOLOGY</div>
+                <h1>Basic Modular <span>Course</span></h1>
+                <p>Build essential maritime skills with practical training designed to support your career at sea.</p>
+                <div class="buttons">
+                    <a href="#courses" class="btn primary">Explore Courses →</a>
+                    <a href="bookcorse.html" class="btn secondary">Book Online</a>
+                </div>
+            </div>
+            <div class="slider-dots" aria-label="Hero image slides">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+                <span class="slider-dot"></span>
+            </div>
+        </section>
+
+        <section class="course-list" id="courses">
+            <div class="section-title">
+                <small>Basic Modular Training</small>
+                <h2>Explore Our Courses</h2>
+                <p>Explore essential tanker, passenger ship, safety, security and refresher training for seafarers.</p>
+            </div>
+
+            <div class="course-grid">
+                <a class="course-card-link" href="course-detail.html?course=otcto">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>OTCTO</h3>
+                            <p>Basic Oil Tanker and Chemical Tanker Operations</p>
+                        </div>
+                        <div class="course-duration"><strong>6 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=psf">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>PSF</h3>
+                            <p>Passenger Ship Familiarization</p>
+                        </div>
+                        <div class="course-duration"><strong>3 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=medical-examiners">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>Medical Examiners</h3>
+                            <p>Familiarisation Course for Medical Examiner of Seafarers</p>
+                        </div>
+                        <div class="course-duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=augff">
+                    <article class="course-card" style="background-image: url('../images/fire.webp')">
+                        <div class="course-card-content">
+                            <h3>AUGFF</h3>
+                            <p>Augmentation of Fire Prevention and Fire Fighting Course</p>
+                        </div>
+                        <div class="course-duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=stsdsd">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>STSDSD</h3>
+                            <p>Security Training for Seafarers with designated Security Duties</p>
+                        </div>
+                        <div class="course-duration"><strong>2 DAYS</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=r-fpff-with-fpff">
+                    <article class="course-card" style="background-image: url('../images/fire.webp')">
+                        <div class="course-card-content">
+                            <h3>R-FPFF with FPFF</h3>
+                            <p>Refresher Training For Proficiency In Fire Prevention And Fire Fighting</p>
+                        </div>
+                        <div class="course-duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=r-pst">
+                    <article class="course-card" style="background-image: url('../images/ship.jpg')">
+                        <div class="course-card-content">
+                            <h3>R-PST</h3>
+                            <p>Refresher Training For Personal Survival Techniques</p>
+                        </div>
+                        <div class="course-duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+                <a class="course-card-link" href="course-detail.html?course=sfs">
+                    <article class="course-card" style="background-image: url('../images/container.jpg')">
+                        <div class="course-card-content">
+                            <h3>sF</h3>
+                            <p>SFS</p>
+                        </div>
+                        <div class="course-duration"><strong>1 DAY</strong><small>COURSE</small></div>
+                    </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="course-footer-grid">
+            <div>
+                <h3>GlobalMove</h3>
+                <p>Maritime training and logistics solutions to help move your career forward.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="advance.html">Advance Modular Course</a></li>
+                    <li><a href="value_added.html">Value Added Course</a></li>
+                    <li><a href="bookcorse.html">Online Booking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Stay Connected</h3>
+                <p>Subscribe for course updates.</p>
+                <form class="subscribe" onsubmit="event.preventDefault(); alert('Thank you for subscribing!')">
+                    <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+                    <button type="submit" aria-label="Subscribe">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">© GlobalMove. All rights reserved. | Powered by ALLYWING SOLUTIONS</div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
