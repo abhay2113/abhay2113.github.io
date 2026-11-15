@@ -315,7 +315,7 @@
     <section class="courses-section homepage-courses-slider" id="courses">
         <div class="container">
             <div class="section-header">
-                <p>ADVANCE + VALUE ADDED TRAINING</p>
+                <p>BASIC + ADVANCE + VALUE ADDED TRAINING</p>
                 <h2>Explore Our Courses</h2>
             </div>
 
@@ -326,7 +326,7 @@
                     <button class="course-slider-button" type="button" id="courseSliderNext"
                         aria-label="Show next courses">›</button>
                 </div>
-                <div class="courses-grid" id="courseSlider" role="region" aria-label="Advance and value added courses"
+                <div class="courses-grid" id="courseSlider" role="region" aria-label="Basic, advance and value added courses"
                     tabindex="0"></div>
             </div>
             <p class="course-slider-hint">Use the arrows or swipe to explore all courses.</p>
@@ -523,22 +523,89 @@
         const courseSliderNext = document.getElementById("courseSliderNext");
         const courseImages = ["images/ship.jpg", "images/container.jpg", "images/fire.webp"];
 
+        const basicCourses = [
+            {
+                id: "otcto",
+                title: "OTCTO",
+                category: "Basic Modular",
+                description: "Basic Oil Tanker and Chemical Tanker Operations",
+                duration: "6 Days",
+                price: "₹ 4500"
+            },
+            {
+                id: "psf",
+                title: "PSF",
+                category: "Basic Modular",
+                description: "Passenger Ship Familiarization",
+                duration: "3 Days",
+                price: "Contact us"
+            },
+            {
+                id: "medical-examiners",
+                title: "Medical Examiners",
+                category: "Basic Modular",
+                description: "Familiarisation Course for Medical Examiner of Seafarers",
+                duration: "1 Day",
+                price: "Contact us"
+            },
+            {
+                id: "augff",
+                title: "AUGFF",
+                category: "Basic Modular",
+                description: "Augmentation of Fire Prevention and Fire Fighting Course",
+                duration: "1 Day",
+                price: "Contact us"
+            },
+            {
+                id: "stsdsd",
+                title: "STSDSD",
+                category: "Basic Modular",
+                description: "Security Training for Seafarers with designated Security Duties",
+                duration: "2 Days",
+                price: "Contact us"
+            },
+            {
+                id: "r-fpff-with-fpff",
+                title: "R-FPFF with FPFF",
+                category: "Basic Modular",
+                description: "Refresher Training For Proficiency In Fire Prevention And Fire Fighting",
+                duration: "1 Day",
+                price: "Contact us"
+            },
+            {
+                id: "r-pst",
+                title: "R-PST",
+                category: "Basic Modular",
+                description: "Refresher Training For Personal Survival Techniques",
+                duration: "1 Day",
+                price: "Contact us"
+            },
+            {
+                id: "sfs",
+                title: "sF",
+                category: "Basic Modular",
+                description: "SFS",
+                duration: "1 Day",
+                price: "Contact us"
+            }
+        ];
+
         const advancedCourses = [
-            ["pscrb", "PSCRB"],
-            ["mfa", "MFA"],
-            ["iasco", "IASCO"],
-            ["hv-m", "HV-(M)"],
-            ["aff", "AFF"],
-            ["r-pscrb-pst", "R-PSCRB WITH PST"],
-            ["rut-o", "RUT (O)"]
-        ].map(([id, title]) => ({
+            ["pscrb", "PSCRB", "5 Days"],
+            ["mfa", "MFA", "5 Days"],
+            ["iasco", "IASCO", "10 Days"],
+            ["hv-m", "HV-(M)", "4 Days"],
+            ["aff", "AFF", "5 Days"],
+            ["r-pscrb-pst", "R-PSCRB WITH PST", "1 Day"],
+            ["rut-o", "RUT (O)", "5 Days"]
+        ].map(([id, title, duration]) => ({
             id,
             title,
             category: "Advance Modular",
+            duration,
+            price: id === "hv-m" ? "₹ 6000" : "Contact us",
             ...(id === "hv-m" ? {
-                description: "High Voltage Safety and Switch Gear",
-                duration: "4 Days",
-                price: "₹ 6000"
+                description: "High Voltage Safety and Switch Gear"
             } : {})
         }));
 
@@ -592,7 +659,13 @@
             ["OERTM", "Offshore Emergency Response Team Member (OERTM)"],
             ["Rig-Safety-Officer", "Rig Safety Officer Course"],
             ["Crane-Operator", "Crane Operator Stage Course"]
-        ].map(([id, title]) => ({ id, title, category: "Value Added" }));
+        ].map(([id, title]) => ({
+            id,
+            title,
+            category: "Value Added",
+            duration: "5 Days",
+            price: "Contact us"
+        }));
 
         const additionalCourses = [
             {
@@ -602,18 +675,10 @@
                 description: "Advanced Training For Oil Tanker Cargo Operations",
                 duration: "6 Days",
                 price: "₹ 5500"
-            },
-            {
-                id: "otcto",
-                title: "OTCTO",
-                category: "Specialist Course",
-                description: "Basic Oil Tanker and Chemical Tanker Operations",
-                duration: "6 Days",
-                price: "₹ 4500"
             }
         ];
 
-        [...advancedCourses, ...valueAddedCourses, ...additionalCourses].forEach((course, index) => {
+        [...basicCourses, ...advancedCourses, ...valueAddedCourses, ...additionalCourses].forEach((course, index) => {
             const link = document.createElement("a");
             link.className = "course-card-link";
             link.href = `HTML/course-detail.html?course=${encodeURIComponent(course.id)}`;
@@ -629,31 +694,41 @@
             image.loading = "lazy";
             imageContainer.appendChild(image);
 
+            const icon = document.createElement("span");
+            icon.className = "course-card-icon";
+            icon.setAttribute("aria-hidden", "true");
+            icon.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 5.5c2.8-.9 5.1-.6 7 1v13c-1.9-1.6-4.2-1.9-7-1zM19 5.5c-2.8-.9-5.1-.6-7 1v13c1.9-1.6 4.2-1.9 7-1zM7.5 9h2M14.5 9h2M7.5 12h2M14.5 12h2"/></svg>';
+
             const content = document.createElement("div");
             content.className = "card-content";
             const title = document.createElement("h3");
             title.textContent = course.title;
             const description = document.createElement("p");
             description.textContent = course.description || `${course.category} maritime training`;
-            const footer = document.createElement("div");
-            footer.className = "card-footer";
-            if (course.duration && course.price) {
-                footer.classList.add("course-legacy-meta");
-                const duration = document.createElement("span");
-                duration.className = "duration";
-                duration.textContent = `📅 ${course.duration}`;
-                const price = document.createElement("span");
-                price.className = "price";
-                price.textContent = course.price;
-                footer.append(duration, price);
-            } else {
-                const category = document.createElement("span");
-                category.className = "course-category";
-                category.textContent = course.category;
-                footer.appendChild(category);
-            }
-            content.append(title, description, footer);
-            card.append(imageContainer, content);
+            content.append(title, description);
+
+            const details = document.createElement("div");
+            details.className = "course-card-details";
+            [
+                ["Duration", course.duration || "Contact us"],
+                ["Fee", course.price || "Contact us"],
+                ["Course type", course.category]
+            ].forEach(([label, value]) => {
+                const row = document.createElement("div");
+                row.className = "course-card-detail";
+                const name = document.createElement("span");
+                name.textContent = label;
+                const detail = document.createElement("strong");
+                detail.textContent = value;
+                row.append(name, detail);
+                details.appendChild(row);
+            });
+
+            link.setAttribute(
+                "aria-label",
+                `${course.title}. Duration: ${course.duration || "Contact us"}. Fee: ${course.price || "Contact us"}. Course type: ${course.category}.`
+            );
+            card.append(imageContainer, icon, content, details);
             link.appendChild(card);
             courseSlider.appendChild(link);
         });
