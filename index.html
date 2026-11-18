@@ -589,22 +589,25 @@
         ];
 
         const advancedCourses = [
-            ["pscrb", "PSCRB", "5 Days"],
-            ["mfa", "MFA", "5 Days"],
-            ["iasco", "IASCO", "10 Days"],
-            ["hv-m", "HV-(M)", "4 Days"],
-            ["aff", "AFF", "5 Days"],
-            ["r-pscrb-pst", "R-PSCRB WITH PST", "1 Day"],
-            ["rut-o", "RUT (O)", "5 Days"]
-        ].map(([id, title, duration]) => ({
+            ["pscrb", "PSCRB", "Proficiency in Survival Craft and Rescue Boats", "5 Days"],
+            ["mfa", "MFA", "Medical First Aid", "4 Days"],
+            ["chemco", "CHEMCO", "Chemical Tanker Cargo Operations", "10 Days"],
+            ["tasco", "TASCO", "Advanced Training For Oil Tanker Cargo Operations", "10 Days"],
+            ["hv-m", "HV-(M)", "High Voltage Safety and Switch Gear", "5 Days"],
+            ["hv-o", "HV-(O)", "High Voltage Safety And Switch Gear", "1 Day"],
+            ["aff", "AFF", "Advanced Fire Fighting", "5 Days"],
+            ["r-pscrb-pst", "R-PSCRB with PST", "Ref.-Proficiency In Survival Craft And Rescue Boats", "1 Day"],
+            ["r-aff", "R-AFF", "Reff.-Advanced Fire Fighting", "1 Day"],
+            ["r-mfa", "R-MFA", "Reff.-Medical First Aid", "1 Day"],
+            ["rut-m", "RUT (M)", "Deck Officer (Revalidation)", "11 Days"],
+            ["rut-o", "RUT (O)", "Deck Officer Re-validation (Operational)", "5 Days"]
+        ].map(([id, title, description, duration]) => ({
             id,
             title,
             category: "Advance Modular",
+            description,
             duration,
-            price: id === "hv-m" ? "₹ 6000" : "Contact us",
-            ...(id === "hv-m" ? {
-                description: "High Voltage Safety and Switch Gear"
-            } : {})
+            price: id === "hv-m" ? "₹ 6000" : id === "tasco" ? "₹ 5500" : "Contact us"
         }));
 
         const valueAddedCourses = [
@@ -665,18 +668,7 @@
             price: "Contact us"
         }));
 
-        const additionalCourses = [
-            {
-                id: "tasco",
-                title: "TASCO",
-                category: "Specialist Course",
-                description: "Advanced Training For Oil Tanker Cargo Operations",
-                duration: "6 Days",
-                price: "₹ 5500"
-            }
-        ];
-
-        [...basicCourses, ...advancedCourses, ...valueAddedCourses, ...additionalCourses].forEach(course => {
+        [...basicCourses, ...advancedCourses, ...valueAddedCourses].forEach(course => {
             const link = document.createElement("a");
             link.className = "course-card-link";
             link.href = `HTML/course-detail.html?course=${encodeURIComponent(course.id)}`;

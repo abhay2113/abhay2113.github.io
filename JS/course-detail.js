@@ -1,17 +1,31 @@
 const courses = {
     tasco: {
         name: "TASCO",
-        description: "Advanced training for oil tanker cargo operations.",
-        duration: "6 days",
+        description: "Advanced Training For Oil Tanker Cargo Operations.",
+        duration: "10 Days",
         fee: "₹ 5,500",
-        type: "Tanker training"
+        type: "Advance Modular Course"
+    },
+    chemco: {
+        name: "CHEMCO",
+        description: "Chemical Tanker Cargo Operations.",
+        duration: "10 days",
+        fee: "Contact us",
+        type: "Advance Modular Course"
     },
     "hv-m": {
         name: "HV-(M)",
         description: "High voltage safety and switch gear training.",
-        duration: "4 days",
+        duration: "5 Days",
         fee: "₹ 6,000",
-        type: "Safety training"
+        type: "Advance Modular Course"
+    },
+    "hv-o": {
+        name: "HV-(O)",
+        description: "High Voltage Safety And Switch Gear.",
+        duration: "1 Day",
+        fee: "Contact us",
+        type: "Advance Modular Course"
     },
     otcto: {
         name: "OTCTO",
@@ -78,8 +92,8 @@ const courses = {
     },
     mfa: {
         name: "MFA",
-        description: "Medical First Aid training for maritime personnel.",
-        duration: "5 days",
+        description: "Medical First Aid.",
+        duration: "4 Days",
         fee: "Contact us",
         type: "Advance Modular Course"
     },
@@ -98,9 +112,30 @@ const courses = {
         type: "Advance Modular Course"
     },
     "r-pscrb-pst": {
-        name: "R-PSCRB WITH PST",
-        description: "Refresher training in Proficiency in Survival Craft and Rescue Boats.",
+        name: "R-PSCRB with PST",
+        description: "Ref.-Proficiency In Survival Craft And Rescue Boats.",
         duration: "1 day",
+        fee: "Contact us",
+        type: "Advance Modular Course"
+    },
+    "r-aff": {
+        name: "R-AFF",
+        description: "Reff.-Advanced Fire Fighting.",
+        duration: "1 Day",
+        fee: "Contact us",
+        type: "Advance Modular Course"
+    },
+    "r-mfa": {
+        name: "R-MFA",
+        description: "Reff.-Medical First Aid.",
+        duration: "1 Day",
+        fee: "Contact us",
+        type: "Advance Modular Course"
+    },
+    "rut-m": {
+        name: "RUT (M)",
+        description: "Deck Officer (Revalidation).",
+        duration: "11 Days",
         fee: "Contact us",
         type: "Advance Modular Course"
     },
