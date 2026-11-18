@@ -456,10 +456,6 @@ const courses = {
     }
 };
 
-emailjs.init({
-    publicKey: "UPJgWYUTS-uNOESHF"
-});
-
 const course = courses[new URLSearchParams(window.location.search).get("course")];
 
 if (course) {
@@ -505,7 +501,7 @@ if (course) {
         button.disabled = true;
         status.textContent = "Sending your enquiry...";
 
-        emailjs.send("service_4ltkjwh", "template_t3jel75", templateParams)
+        emailjs.send(window.EMAILJS_CONFIG.serviceId, window.EMAILJS_CONFIG.templateId, templateParams)
             .then(function () {
                 status.textContent = "Your enquiry was sent successfully. We will contact you soon.";
                 form.reset();

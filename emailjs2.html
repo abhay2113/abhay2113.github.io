@@ -1,0 +1,44 @@
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 12px">
+  <div>New course booking request received from {{candidate_name}}. Kindly check the details below:</div>
+  <div style="
+      margin-top: 20px;
+      padding: 15px 0;
+      border-width: 1px 0;
+      border-style: dashed;
+      border-color: lightgrey;
+    ">
+    <table role="presentation">
+      <tr>
+        <td style="vertical-align: top">
+          <div style="
+              padding: 6px 10px;
+              margin: 0 10px;
+              background-color: aliceblue;
+              border-radius: 5px;
+              font-size: 26px;
+            " role="img">
+            🎓
+          </div>
+        </td>
+        <td style="vertical-align: top">
+          <div style="color: #2c3e50; font-size: 16px">
+            <strong>{{candidate_name}}</strong>
+          </div>
+          <!-- <div style="color: #888888; font-size: 13px">ID / Passport: {{passport}}</div> -->
+
+          <div style="margin-top: 10px; font-size: 14px; color: #333333;">
+            
+            <p><strong>Course Type:</strong> {{course_type}}</p>
+            <p><strong>Course:</strong> {{course}}</p>
+           
+            <p><strong>Fee:</strong> {{fee}}</p>
+            <p><strong>Course Duration:</strong> {{course_duration}}</p>
+            <p><strong>INDoS No:</strong> {{indos_no}}</p>
+            <p><strong>Mobile / WhatsApp:</strong> {{mobile}}</p>
+            <p><strong>Email ID:</strong> {{email}}</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

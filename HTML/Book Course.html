@@ -10,13 +10,7 @@
     <!-- EmailJS SDK -->
     <link rel="stylesheet" href="../CSS/style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "UPJgWYUTS-uNOESHF",
-            });
-        })();
-    </script>
+    <script src="../JS/emailjs-config.js"></script>
 </head>
 
 <body class="booking-page">
@@ -335,7 +329,7 @@
             };
 
             /* SEND EMAIL VIA EMAILJS */
-            emailjs.send("service_4ltkjwh", "template_t3jel75", templateParams)
+            emailjs.send(window.EMAILJS_CONFIG.serviceId, window.EMAILJS_CONFIG.templateId, templateParams)
                 .then(function (response) {
                     const successMsg = document.getElementById("successMessage");
                     successMsg.style.display = "block";
