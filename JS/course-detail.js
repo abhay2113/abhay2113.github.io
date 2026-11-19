@@ -351,7 +351,7 @@ const course = courses[courseId];
 const courseData = window.COURSE_DATA[courseId];
 
 if (course && courseData) {
-    const courseImage = getCourseImageUrl(course.name);
+    const courseImage = getCourseImageUrl(courseId);
     document.querySelector(".course-detail-hero").style.backgroundImage =
         `linear-gradient(90deg, rgba(5, 15, 30, .88), rgba(5, 15, 30, .48)), url("${courseImage}")`;
     document.title = `${course.name} | MarineCourse`;

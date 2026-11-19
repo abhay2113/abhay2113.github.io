@@ -511,49 +511,49 @@
                 id: "otcto",
                 title: "OTCTO",
                 category: "Basic Modular",
-                description: "Basic Oil Tanker and Chemical Tanker Operations"
+                description: "Basic Oil Tanker and Chemical Tanker Operations",
             },
             {
                 id: "psf",
                 title: "PSF",
                 category: "Basic Modular",
-                description: "Passenger Ship Familiarization"
+                description: "Passenger Ship Familiarization",
             },
             {
                 id: "medical-examiners",
                 title: "Medical Examiners",
                 category: "Basic Modular",
-                description: "Familiarisation Course for Medical Examiner of Seafarers"
+                description: "Familiarisation Course for Medical Examiner of Seafarers",
             },
             {
                 id: "augff",
                 title: "AUGFF",
                 category: "Basic Modular",
-                description: "Augmentation of Fire Prevention and Fire Fighting Course"
+                description: "Augmentation of Fire Prevention and Fire Fighting Course",
             },
             {
                 id: "stsdsd",
                 title: "STSDSD",
                 category: "Basic Modular",
-                description: "Security Training for Seafarers with designated Security Duties"
+                description: "Security Training for Seafarers with designated Security Duties",
             },
             {
                 id: "r-fpff-with-fpff",
                 title: "R-FPFF with FPFF",
                 category: "Basic Modular",
-                description: "Refresher Training For Proficiency In Fire Prevention And Fire Fighting"
+                description: "Refresher Training For Proficiency In Fire Prevention And Fire Fighting",
             },
             {
                 id: "r-pst",
                 title: "R-PST",
                 category: "Basic Modular",
-                description: "Refresher Training For Personal Survival Techniques"
+                description: "Refresher Training For Personal Survival Techniques",
             },
             {
                 id: "sfs",
                 title: "sF",
                 category: "Basic Modular",
-                description: "SFS"
+                description: "SFS",
             }
         ];
 
@@ -630,7 +630,7 @@
         ].map(([id, title]) => ({
             id,
             title,
-            category: "Value Added"
+            category: "Value Added",
         }));
 
         [...basicCourses, ...advancedCourses, ...valueAddedCourses].forEach(course => {
@@ -649,7 +649,7 @@
             const imageContainer = document.createElement("div");
             imageContainer.className = "card-img-container";
             const image = document.createElement("img");
-            image.src = getCourseImageUrl(course.title);
+            image.src = getCourseImageUrl(course.id);
             image.alt = "";
             image.loading = "lazy";
             imageContainer.appendChild(image);
