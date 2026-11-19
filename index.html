@@ -26,8 +26,6 @@
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <!-- <li><a href="#services">Services</a></li> -->
-
                 <li class="dropdown">
                     <button
                         class="dropdown-toggle"
@@ -58,7 +56,6 @@
 
                 <li><a href="HTML/Book Course.html">Online Booking</a></li>
                 <li><a href="#why">Why Us</a></li>
-                <!-- <li><a href="Register.html">Register</a></li> -->
             </ul>
 
         </nav>
@@ -86,8 +83,6 @@
 
                 <h1>
                     your getway to successful maritime career
-                    <!-- Build Your Career at Sea -->
-                    <!-- <span>Across Borders.</span> -->
                 </h1>
                 <h2>Practical Maritime Training for Seafarers</h2>
 
@@ -105,10 +100,6 @@
                     <a href="HTML/Book Course.html" class="btn secondary">
                         Book a Course
                     </a>
-
-                    <div id="userArea">
-                        <!-- <a href="HTML/Login.html" class="btn primary login-btn">Login</a> -->
-                    </div>
 
                 </div>
 
@@ -132,7 +123,6 @@
 
                 <h1>
                     Check your certificate
-                    <!-- Upgrade Your Skills -->
                     <span>Across The World.</span>
                 </h1>
 
@@ -150,8 +140,6 @@
                     <a href="HTML/Book Course.html" class="btn secondary">
                         Book a Course
                     </a>
-
-                    <!-- <a href="HTML/Login.html" class="btn primary login-btn">Login</a> -->
 
                 </div>
 
@@ -197,10 +185,6 @@
                     <a href="HTML/Book Course.html" class="btn secondary">
                         Online Booking
                     </a>
-
-                    <!-- <a href="HTML/Login.html" class="btn primary login-btn">
-                        Login
-                    </a> -->
 
                 </div>
 
@@ -473,7 +457,7 @@
         <div class="footer-grid">
 
             <div>
-                <h3>Abhay (Heru) International Institute of Marine Technology</h3>
+                <h3>Abhay International Institute of Marine Technology</h3>
                 <p>
                     Maritime training courses for seafarers and
                     aspiring maritime professionals.
@@ -503,7 +487,7 @@
         </div>
 
         <div class="copyright">
-            © 2026 Abhay (Heeru) International Institute of Marine Technology. All Rights Reserved.
+            © 2026 Abhay International Institute of Marine Technology. All Rights Reserved.
         </div>
 
     </footer>
@@ -515,6 +499,7 @@
     </a>
 
     <script src="JS/script.js"></script>
+    <script src="JS/course-data.js"></script>
 
     <script>
 
@@ -526,88 +511,70 @@
                 id: "otcto",
                 title: "OTCTO",
                 category: "Basic Modular",
-                description: "Basic Oil Tanker and Chemical Tanker Operations",
-                duration: "6 Days",
-                price: "₹ 4500"
+                description: "Basic Oil Tanker and Chemical Tanker Operations"
             },
             {
                 id: "psf",
                 title: "PSF",
                 category: "Basic Modular",
-                description: "Passenger Ship Familiarization",
-                duration: "3 Days",
-                price: "Contact us"
+                description: "Passenger Ship Familiarization"
             },
             {
                 id: "medical-examiners",
                 title: "Medical Examiners",
                 category: "Basic Modular",
-                description: "Familiarisation Course for Medical Examiner of Seafarers",
-                duration: "1 Day",
-                price: "Contact us"
+                description: "Familiarisation Course for Medical Examiner of Seafarers"
             },
             {
                 id: "augff",
                 title: "AUGFF",
                 category: "Basic Modular",
-                description: "Augmentation of Fire Prevention and Fire Fighting Course",
-                duration: "1 Day",
-                price: "Contact us"
+                description: "Augmentation of Fire Prevention and Fire Fighting Course"
             },
             {
                 id: "stsdsd",
                 title: "STSDSD",
                 category: "Basic Modular",
-                description: "Security Training for Seafarers with designated Security Duties",
-                duration: "2 Days",
-                price: "Contact us"
+                description: "Security Training for Seafarers with designated Security Duties"
             },
             {
                 id: "r-fpff-with-fpff",
                 title: "R-FPFF with FPFF",
                 category: "Basic Modular",
-                description: "Refresher Training For Proficiency In Fire Prevention And Fire Fighting",
-                duration: "1 Day",
-                price: "Contact us"
+                description: "Refresher Training For Proficiency In Fire Prevention And Fire Fighting"
             },
             {
                 id: "r-pst",
                 title: "R-PST",
                 category: "Basic Modular",
-                description: "Refresher Training For Personal Survival Techniques",
-                duration: "1 Day",
-                price: "Contact us"
+                description: "Refresher Training For Personal Survival Techniques"
             },
             {
                 id: "sfs",
                 title: "sF",
                 category: "Basic Modular",
-                description: "SFS",
-                duration: "1 Day",
-                price: "Contact us"
+                description: "SFS"
             }
         ];
 
         const advancedCourses = [
-            ["pscrb", "PSCRB", "Proficiency in Survival Craft and Rescue Boats", "5 Days"],
-            ["mfa", "MFA", "Medical First Aid", "4 Days"],
-            ["chemco", "CHEMCO", "Chemical Tanker Cargo Operations", "10 Days"],
-            ["tasco", "TASCO", "Advanced Training For Oil Tanker Cargo Operations", "10 Days"],
-            ["hv-m", "HV-(M)", "High Voltage Safety and Switch Gear", "5 Days"],
-            ["hv-o", "HV-(O)", "High Voltage Safety And Switch Gear", "1 Day"],
-            ["aff", "AFF", "Advanced Fire Fighting", "5 Days"],
-            ["r-pscrb-pst", "R-PSCRB with PST", "Ref.-Proficiency In Survival Craft And Rescue Boats", "1 Day"],
-            ["r-aff", "R-AFF", "Reff.-Advanced Fire Fighting", "1 Day"],
-            ["r-mfa", "R-MFA", "Reff.-Medical First Aid", "1 Day"],
-            ["rut-m", "RUT (M)", "Deck Officer (Revalidation)", "11 Days"],
-            ["rut-o", "RUT (O)", "Deck Officer Re-validation (Operational)", "5 Days"]
-        ].map(([id, title, description, duration]) => ({
+            ["pscrb", "PSCRB", "Proficiency in Survival Craft and Rescue Boats"],
+            ["mfa", "MFA", "Medical First Aid"],
+            ["chemco", "CHEMCO", "Chemical Tanker Cargo Operations"],
+            ["tasco", "TASCO", "Advanced Training For Oil Tanker Cargo Operations"],
+            ["hv-m", "HV-(M)", "High Voltage Safety and Switch Gear"],
+            ["hv-o", "HV-(O)", "High Voltage Safety And Switch Gear"],
+            ["aff", "AFF", "Advanced Fire Fighting"],
+            ["r-pscrb-pst", "R-PSCRB with PST", "Ref.-Proficiency In Survival Craft And Rescue Boats"],
+            ["r-aff", "R-AFF", "Reff.-Advanced Fire Fighting"],
+            ["r-mfa", "R-MFA", "Reff.-Medical First Aid"],
+            ["rut-m", "RUT (M)", "Deck Officer (Revalidation)"],
+            ["rut-o", "RUT (O)", "Deck Officer Re-validation (Operational)"]
+        ].map(([id, title, description]) => ({
             id,
             title,
             category: "Advance Modular",
-            description,
-            duration,
-            price: id === "hv-m" ? "₹ 6000" : id === "tasco" ? "₹ 5500" : "Contact us"
+            description
         }));
 
         const valueAddedCourses = [
@@ -663,12 +630,15 @@
         ].map(([id, title]) => ({
             id,
             title,
-            category: "Value Added",
-            duration: "5 Days",
-            price: "Contact us"
+            category: "Value Added"
         }));
 
         [...basicCourses, ...advancedCourses, ...valueAddedCourses].forEach(course => {
+            const courseData = window.COURSE_DATA[course.id];
+            if (!courseData) {
+                throw new Error(`Missing shared course data for "${course.id}".`);
+            }
+
             const link = document.createElement("a");
             link.className = "course-card-link";
             link.href = `HTML/course-detail.html?course=${encodeURIComponent(course.id)}`;
@@ -700,8 +670,8 @@
             const details = document.createElement("div");
             details.className = "course-card-details";
             [
-                ["Duration", course.duration || "Contact us"],
-                ["Fee", course.price || "Contact us"],
+                ["Duration", courseData.duration],
+                ["Fee", courseData.fee],
                 ["Course type", course.category]
             ].forEach(([label, value]) => {
                 const row = document.createElement("div");
@@ -716,7 +686,7 @@
 
             link.setAttribute(
                 "aria-label",
-                `${course.title}. Duration: ${course.duration || "Contact us"}. Fee: ${course.price || "Contact us"}. Course type: ${course.category}.`
+                `${course.title}. Duration: ${courseData.duration}. Fee: ${courseData.fee}. Course type: ${course.category}.`
             );
             card.append(imageContainer, icon, content, details);
             link.appendChild(card);
@@ -765,79 +735,6 @@
             }, 5000);
         }
 
-
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-            closeDropdown();
-        }
-
-
-        /* NAVBAR LINKS */
-
-        document.querySelectorAll(".nav-links a").forEach(link => {
-
-            link.addEventListener("click", function (event) {
-                if (this.closest(".dropdown-menu")) {
-                    closeDropdown();
-                }
-
-                document
-                    .getElementById("navLinks")
-                    .classList.remove("active");
-
-            });
-
-        });
-
-
-        /* COURSES DROPDOWN */
-
-        function toggleDropdown(event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            const dropdown =
-                document.getElementById("coursesDropdown");
-            const toggle = event.currentTarget;
-            const isOpen = dropdown.classList.toggle("show");
-
-            toggle.setAttribute("aria-expanded", String(isOpen));
-        }
-
-        function closeDropdown() {
-            const dropdown = document.getElementById("coursesDropdown");
-            const toggle = document.querySelector(".dropdown-toggle");
-
-            dropdown.classList.remove("show");
-            toggle.setAttribute("aria-expanded", "false");
-        }
-
-        document.addEventListener("click", function(event) {
-            if (!event.target.closest(".dropdown")) {
-                closeDropdown();
-            }
-        });
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape") {
-                closeDropdown();
-            }
-        });
-
-
-        /* QUOTE */
-
-        function sendQuote(event) {
-
-            event.preventDefault();
-
-            alert(
-                "Thank you! Your quote request has been received. " +
-                "Our team will contact you shortly."
-            );
-
-        }
 
     </script>
 

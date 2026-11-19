@@ -163,96 +163,35 @@
         © 2026 GlobalMove Logistics. All Rights Reserved.
     </footer>
 
+    <script src="../JS/course-data.js"></script>
     <script>
         /* ================= COURSE FEES ================= */
-        const courseCatalog = {
-            "Basic Modular Course": [
-                "OTCTO",
-                "PSF",
-                "Medical Examiners",
-                "AUGFF",
-                "STSDSD",
-                "R-FPFF with FPFF",
-                "R-PST",
-                "sF - SFS"
-            ],
-            "Advance Modular Course": [
-                "PSCRB",
-                "MFA",
-                "CHEMCO",
-                "TASCO",
-                "HV-(M)",
-                "HV-(O)",
-                "AFF",
-                "R-PSCRB with PST",
-                "R-AFF",
-                "R-MFA",
-                "RUT (M)",
-                "RUT (O)"
-            ],
-            "Value Added Course": [
-                "Marine Hazmat Course",
-                "Marine Fire Watchman Course",
-                "Marine Gangway Operator Training",
-                "Marine Inspector Course",
-                "Marine PSB Course",
-                "Marine Scaffolding Familiarization Course (SFC)",
-                "Roustabout Course",
-                "Rigging and Scaffolding Training",
-                "Marine Safe Lifting & Hoisting Course",
-                "Marine Forklift Operator Course",
-                "Scaffolding Inspector Course",
-                "IADC Rig Pass Course",
-                "HUET OPITO Approved — Code 5095",
-                "BOSIET with EBS (OPITO Approved) — Code 5700",
-                "Helicopter Underwater Escape Training (HUET)",
-                "Designated Person Ashore (DPA)",
-                "Marine Mental Health Awareness",
-                "Risk Assessment & Incident Investigation (RAII)",
-                "Maritime English Course (MEC)",
-                "Bridge Team Management Refresher (BTM-R)",
-                "Bridge Team Resource Management (BTRM)",
-                "Bridge Team Resource Management (BTRM)",
-                "Bridge Resource Management Refresher (BRM-R)",
-                "Bridge Team Resource Management Refresher (BTRM-Refresher)",
-                "Bridge Team Management (BTM)",
-                "Liquid Cargo Handling Simulator Training (LCHS)",
-                "LNG Cargo & Ballast Handling Simulator Training",
-                "Crew Safety Course (CSC)",
-                "Working Safety on Height (WSH)",
-                "Crowd & Crisis Management (CCM)",
-                "Accident Investigation (AI)",
-                "Ice Navigation (INC)",
-                "Company Security Officer (CSO)",
-                "Basic Offshore Safety Induction & Emergency Training (BOSIET)",
-                "Hydrogen Sulphide Safety (H2S)",
-                "Hydrogen Sulphide Safety (H2S)",
-                "Helicopter Landing Officer (HLO)",
-                "Helicopter Landing Assistant (HLA)",
-                "H2S OPITO Approved — Code 9014",
-                "CA-EBS (Compressed Air Emergency Breathing System)",
-                "Rigging & Slinging Course",
-                "Lifting & Hoisting Course",
-                "Banksman & Slinger Training Course",
-                "Offshore Emergency Helideck Team Member (OEHTM)",
-                "Drilling Familiarization Course",
-                "Winch Operator Course",
-                "Offshore Emergency Response Team Member (OERTM)",
-                "Rig Safety Officer Course",
-                "Crane Operator Stage Course"
-            ]
+        const categories = {
+            "Basic Modular Course": "Basic Modular",
+            "Advance Modular Course": "Advance Modular",
+            "Value Added Course": "Value Added"
         };
+        const allCourses = Object.values(window.COURSE_DATA);
+        const courseCatalog = Object.fromEntries(
+            Object.entries(categories).map(function ([courseType, category]) {
+                return [
+                    courseType,
+                    allCourses
+                        .filter(function (course) { return course.category === category; })
+                        .map(function (course) { return course.bookingName; })
+                ];
+            })
+        );
         courseCatalog["DG Approved Course"] = courseCatalog["Advance Modular Course"]
             .concat(courseCatalog["Basic Modular Course"]);
 
         const courseTypeSelect = document.getElementById("courseType");
         const courseSelect = document.getElementById("course");
-        const courseFees = {
-            "TASCO": "5500",
-            "HV-(M)": "6000",
-            "OTCTO": "4500",
-            "Marine Hazmat Course": "5000",
-        };
+        const courseFees = Object.fromEntries(
+            allCourses.map(function (course) {
+                return [course.bookingName, course.fee];
+            })
+        );
 
         function updateCourseOptions() {
             const courses = courseCatalog[courseTypeSelect.value] || [];
@@ -273,8 +212,8 @@
             const fee = document.getElementById("fee");
             const courseFee = courseFees[this.value];
 
-            if (courseFee) {
-                fee.value = "₹ " + courseFee;
+            if (courseFee && courseFee !== "Contact us") {
+                fee.value = courseFee;
             } else {
                 fee.value = this.value ? "To be confirmed" : "";
             }
