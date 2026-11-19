@@ -2,15 +2,17 @@ window.EMAILJS_CONFIG = Object.freeze({
     
     // nitin bhai id
 
-    publicKey: "UPJgWYUTS-uNOESHF",
-    serviceId: "service_4ltkjwh",
-    templateId: "template_t3jel75"
+    // publicKey: "UPJgWYUTS-uNOESHF",
+    // serviceId: "service_4ltkjwh",
+    // templateId: "template_t3jel75",
+    // templateId2: "template_t3jel75"
     
     // my id
 
-    // publicKey: "PuPX39kPOA2C6uoTl",
-    // serviceId: "service_6rct1bf",
-    // templateId: "template_yxpscbu"
+    publicKey: "PuPX39kPOA2C6uoTl",
+    serviceId: "service_6rct1bf",
+    templateId: "template_yxpscbu",
+    templateId2: "template_soq8uag"
 });
 
 emailjs.init({

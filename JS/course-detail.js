@@ -536,7 +536,7 @@ if (course) {
         button.disabled = true;
         status.textContent = "Sending your enquiry...";
 
-        emailjs.send(window.EMAILJS_CONFIG.serviceId, window.EMAILJS_CONFIG.templateId, templateParams)
+        emailjs.send(window.EMAILJS_CONFIG.serviceId, window.EMAILJS_CONFIG.templateId2, templateParams)
             .then(function () {
                 status.textContent = "Your enquiry was sent successfully. We will contact you soon.";
                 form.reset();
